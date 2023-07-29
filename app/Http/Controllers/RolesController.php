@@ -44,7 +44,7 @@ class RolesController extends Controller
      */
     public function edit(Roles $roles)
     {
-        //
+        
     }
 
     /**

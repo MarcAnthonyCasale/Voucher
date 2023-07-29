@@ -40,18 +40,24 @@ class DatabaseSeeder extends Seeder
         $user = \App\Models\User::factory()->create([
             'name' => 'Example User',
             'email' => 'test@example.com',
+            'password' => bcrypt('qweqweqwe')
+
         ]);
         $user->assignRole($role1);
 
         $user = \App\Models\User::factory()->create([
             'name' => 'Example Group-Admin User',
             'email' => 'admin@example.com',
+            'password' => bcrypt('qweqweqwe')
+
+
         ]);
         $user->assignRole($role2);
 
         $user = \App\Models\User::factory()->create([
             'name' => 'Example Super-Admin User',
             'email' => 'superadmin@example.com',
+            'password' => bcrypt('qweqweqwe')
         ]);
         $user->assignRole($role3);
     }

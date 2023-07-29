@@ -14,6 +14,8 @@
                     <td>{{ index + 1 }}</td>
                     <td>{{ user.name }}</td>
                     <td>{{ user.email }}</td>
+                    <td>{{ user.updated_at }}</td>
+                    <td>{{ user.created_at }}</td>
                 </tr>
             </tbody>
         </table>
@@ -26,9 +28,9 @@
             }
         },
         created() {
-            axios.get('/user')
+            axios.get('/api/user')
                 .then(response => {
-                    this.users = response.data;
+                    this.users = response.data.data;
                 })
                 .catch(error => {
                     console.log("Error", error)
