@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
+
         // create permissions
         Permission::create(['name' => 'edit voucher']);
         Permission::create(['name' => 'delete voucher']);
@@ -59,7 +60,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'superadmin@example.com',
             'password' => bcrypt('qweqweqwe')
         ]);
-        $user->assignRole($role3);
+
+        $this->call([
+            GroupSeeder::class,
+        ]);
     }
 
 }
